@@ -1,0 +1,10 @@
+<div class="shipping">
+    <div class="shipping-head" [class.expanded]="isExpanded" (click)="toggle()">
+        {{ title }}
+        <span class="fa" [ngClass]="{'fa-chevron-up': isExpanded, 'fa-chevron-down': !isExpanded}" >
+        </span>
+    </div>
+    <div *ngIf="isExpanded" class="shipping-body">
+        <ng-content></ng-content>
+    </div>
+</div>

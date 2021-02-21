@@ -1,0 +1,20 @@
+<!-- using ngif to toggle between DOMs -->
+<div *ngIf="courses; then coursesList else noCourses"></div>
+
+<ng-template #coursesList>
+    List of Courses
+</ng-template>
+<ng-template #noCourses>
+    No courses yet!
+</ng-template><br/><br/>
+
+<button (click)='loadCourses()'>LOAD COURSES</button>
+
+<button (click)="onAdd()">ADD</button>
+<ul>
+    <li *ngFor="let course of courses; trackBy: trackCourse">
+        {{ course.name }}
+        <button (click)="onRemove(course)">REMOVE</button>
+        <button (click)="onChange(course)">UPDATE</button>
+    </li>
+</ul>

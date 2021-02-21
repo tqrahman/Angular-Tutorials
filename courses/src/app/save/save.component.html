@@ -1,0 +1,11 @@
+    <!-- [style.backgroundColor]="canSave ? 'blue' : 'gray'"
+    [style.color]="canSave ? 'white' : 'blue'"
+    [style.fontWeight]="canSave ? 'bold' : 'normal'" -->
+<button
+    [ngStyle]="{
+        'backgroundColor': canSave ? 'blue' : 'gray',
+        'color': canSave ? 'white': 'black'
+    }"  
+>
+SAVE
+</button>
